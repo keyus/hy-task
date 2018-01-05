@@ -1,0 +1,631 @@
+html {
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+}
+
+html {
+    color: #000;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.loading-box {
+    position: absolute;
+    height: 100%;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+}
+
+.loading-box .loading-text {
+    font-size: 0.25rem;
+    color: #999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0.6rem);
+}
+
+.loading-box .spinner {
+    margin: 0 auto 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.loading-box .spinner>div {
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: rgba(98,176,246,0.7);
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.loading-box .spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.loading-box .spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+.no-data {
+    height: 2.5rem;
+    background: url("../images/icon_nodata@2x.png") no-repeat center;
+    line-height: 3rem;
+    padding-top: .8rem;
+    font-size: .24rem;
+    text-align: center;
+    margin-top: .22rem;
+    color: #aaa;
+}
+
+@-moz-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@-o-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.pc-device .no-data{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 12px;
+    width: 80px;
+    color: #999;
+    background: url("../images/icon_nodata@3x.png") no-repeat top center;
+    background-size: 80px;
+    margin-top: 0;
+    height: auto;
+    line-height: 1;
+    padding-top: 86px;
+}
+
+
+.pc-device .loading-box .loading-text {
+    font-size: 12px;
+    transform: translate(-50%, 20px);
+}
+
+.pc-device .loading-box .spinner>div {
+    width: 15px;
+    height: 15px;
+}
+
+@-moz-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@-o-keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+.workbench-app {
+    height: 100%;
+}
+
+.workbench-app .title {
+    font-size: 0.3rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    color: #333;
+    margin: 0 0.3rem;
+    position: relative;
+}
+
+.workbench-app .title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 0.01rem;
+    display: block;
+    border-bottom: 0.01rem solid #dadada;
+}
+
+.workbench-app .title a {
+    display: inline-block;
+    width: 2.3rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    line-height: 0.44rem;
+    border: 1px solid #fff;
+    color: #666;
+    font-size: 0.26rem;
+}
+
+.workbench-app .title a.active {
+    color: #1a9ffc;
+    border: 1px solid #1a9ffc;
+}
+
+.workbench-app .page {
+    overflow: hidden;
+    min-height: 2.5rem;
+    position: relative;
+    height: calc(100% - 0.88rem);
+}
+
+.workbench-app .pagenation {
+    padding-top: 0.3rem;
+    font-size: 0.28rem;
+    text-align: center;
+}
+
+.workbench-app .pagenation .pagenum {
+    font-size: 0.24rem;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.workbench-app .pagenation a {
+    vertical-align: middle;
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.24rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../images/icon-pageup.png");
+    margin-right: 0.99rem;
+}
+
+.workbench-app .pagenation a.next {
+    margin-left: 0.99rem;
+    margin-right: 0;
+    background-image: url("../images/icon-pagenext.png");
+}
+
+.workbench-app .pagenation a.disabled {
+    opacity: 0.4;
+}
+
+.workbench-app .mytask {
+    padding-top: 0.1rem;
+    overflow: hidden;
+}
+
+.workbench-app .mytask ul {
+    min-height: 2.5rem;
+}
+
+.workbench-app .mytask li:last-child a {
+    padding-bottom: 0;
+}
+
+.workbench-app .mytask li a {
+    padding: 0.05rem 0.26667rem 0.05rem 0.66rem;
+    min-width: 0;
+    display: flex;
+    font-size: 0.3rem;
+    line-height: 2.2;
+    position: relative;
+}
+
+.workbench-app .mytask li a:hover {
+    background: transparent;
+}
+
+.workbench-app .mytask li a:active {
+    background: #f5f5f5;
+}
+
+.workbench-app .mytask li a .mobile-radius {
+    position: absolute;
+    left: 0.29rem;
+    top: 50%;
+    display: block;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #fc5558;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+}
+
+.workbench-app .mytask li a .icon-task {
+    margin-right: 0.15rem;
+    margin-top: 0.14rem;
+    width: 0.54rem;
+    height: 0.54rem;
+    background-image: url("../images/icon-task.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.workbench-app .mytask li a .name {
+    flex: 1;
+    min-width: 0;
+}
+
+.workbench-app .mytask li a .name .taskname {
+    color: #333;
+    padding-right: 1rem;
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.workbench-app .mytask li a .name .taskname span {
+    min-width: 0;
+    max-width: calc(100% - 1rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.workbench-app .mytask li a .name .taskname .rate {
+    margin-left: 0.2rem;
+    min-width: 0;
+    color: #42ae42;
+    text-align: center;
+    width: 0.7rem;
+    height: 0.3rem;
+    font-size: 0.22rem;
+    line-height: 0.3rem;
+    background: #fff;
+    border-radius: 0.3rem;
+    border: 1px solid #42ae42;
+    font-style: normal;
+}
+
+.workbench-app .mytask li a .name p {
+    line-height: 0.4rem;
+    color: #999;
+    font-size: 0.24rem;
+    display: flex;
+}
+
+.workbench-app .mytask li a .name p .user {
+    max-width: 0.95rem;
+    min-width: 0;
+    margin-right: 0.2rem;
+    font-size: 0.24rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #999;
+}
+
+.workbench-app .mytask li a .state {
+    width: 1rem;
+    padding-top: 0.1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.workbench-app .mytask li a .rate {
+    color: #42ae42;
+    text-align: center;
+    width: 0.7rem;
+    height: 0.3rem;
+    font-size: 0.22rem;
+    line-height: 0.33rem;
+    background: #fff;
+    border-radius: 0.3rem;
+    border: 1px solid #42ae42;
+}
+
+.workbench-app .mytask li a .rate-red {
+    border-color: #fc5558 !important;
+    color: #fc5558 !important;
+}
+
+.workbench-app .mytask li a .new {
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    width: 38px;
+    height: 16px;
+    line-height: 16px;
+    background: #fc5558;
+}
+
+.pc-device .workbench-app .title {
+    padding-left: 10px;
+    margin: 0;
+    font-size: 14px;
+    height: 34px;
+    line-height: 33px;
+    border-bottom: none;
+}
+
+.pc-device .workbench-app .title:after {
+    top: 33px;
+    height: 1px;
+    border-bottom: 1px solid #dce9f4;
+}
+
+.pc-device .workbench-app .title a {
+    width: auto;
+    color: #333;
+    font-size: 12px;
+    border: none;
+    margin-right: 20px;
+}
+
+.pc-device .workbench-app .title a:last-child {
+    margin-right: 0;
+}
+
+.pc-device .workbench-app .title a.active {
+    color: #1a9ffc;
+    border: none;
+}
+
+.pc-device .workbench-app .page {
+    min-height: 132px;
+    height: calc(100% - 34px);
+}
+
+.pc-device .workbench-app .pagenation {
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.pc-device .workbench-app .pagenation .pagenum {
+    font-size: 12px;
+}
+
+.pc-device .workbench-app .pagenation a {
+    width: 10px;
+    height: 12px;
+    margin-right: 10%;
+}
+
+.pc-device .workbench-app .pagenation a.next {
+    margin-left: 10%;
+    margin-right: 0;
+}
+
+.pc-device .workbench-app .mytask {
+    padding: 0;
+    height: 100%;
+}
+
+.pc-device .workbench-app .mytask ul {
+    padding-top: 5px;
+    height: calc(100% - 35px);
+}
+
+.pc-device .workbench-app .mytask li a {
+    padding: 2px 10px 2px 26px;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.pc-device .workbench-app .mytask li a:hover {
+    background: #def1fc;
+}
+
+.pc-device .workbench-app .mytask li a .icon-task {
+    width: 28px;
+    height: 28px;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+.pc-device .workbench-app .mytask li a .mobile-radius {
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+.pc-device .workbench-app .mytask li a .name .taskname {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.pc-device .workbench-app .mytask li a .name .taskname span {
+    min-width: 0;
+    max-width: calc(100% - 50px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-device .workbench-app .mytask li a .name .taskname .rate {
+    margin-left: 8px;
+    min-width: 0;
+    color: #42ae42;
+    text-align: center;
+    width: 38px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 1;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #42ae42;
+    font-style: normal;
+}
+
+.pc-device .workbench-app .mytask li a .name p {
+    line-height: 20px;
+    color: #999;
+    display: flex;
+    font-size: 12px;
+}
+
+.pc-device .workbench-app .mytask li a .name p .user {
+    max-width: 45px;
+    margin-right: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.pc-device .workbench-app .mytask li a .name p .time {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.pc-device .workbench-app .mytask li a .state {
+    width: 60px;
+    padding-top: 4px;
+}
+
+.pc-device .workbench-app .mytask li a .rate {
+    margin-left: 4px;
+    font-size: 12px;
+    color: #42ae42;
+    text-align: center;
+    width: 38px;
+    height: 16px;
+    line-height: 1;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #42ae42;
+}

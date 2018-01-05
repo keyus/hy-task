@@ -1,0 +1,87 @@
+.not-select{
+  i{
+    color: #b0b0b0!important;
+  }
+}
+
+.task-select-user{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .user-one{
+    color: $color-blue;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .user-one-icon{
+    color: $color-blue;
+    margin-left: 3px;
+  }
+
+  .task-select-user__handle{
+    display: flex;
+    align-items: center;
+    margin-top: -4px;
+    cursor: pointer;
+    margin-left: -2px;
+    i{
+      color: #8fc7fe;
+      font-size: 20px;
+      margin-right: 8px;
+    }
+    em{
+      font-style: normal;
+      color: #999;
+      margin-right: 5px;
+    }
+  }
+    span{
+      margin-bottom: 3px;
+      width: 60px;
+      height: 20px;
+      background: #ececec;
+      line-height: 20px;
+      color: #333;
+      padding-left: 5px;
+      margin-right: 3px;
+      position: relative;
+      i{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0 5px;
+        color: #C6C6C6;
+        cursor: pointer;
+      }
+      label{
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+  a{
+    color: $color-blue;
+    margin-top: -3px;
+  }
+}
+.not-select-user{
+  span {
+    text-align: center;
+  }
+}
+.select-error{
+  .task-select-user__handle{
+    //i{
+    //  color: $color-red;
+    //}
+    em{
+      color: $color-red;
+    }
+  }
+}

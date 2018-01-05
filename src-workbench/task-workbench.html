@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <title>任务工作台</title>
+    <link rel="stylesheet" href="assets-workbench/css/style.css" />
+    <script src="assets-workbench/js/vue.min.js"></script>
+    <script>
+
+        var isMobile = /Android|Adr|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent);
+        //移动端
+        if(isMobile){
+            !function (e) {
+                function t(a) {
+                    if (i[a]) return i[a].exports;
+                    var n = i[a] = {exports: {}, id: a, loaded: !1};
+                    return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+                }
+
+                var i = {};
+                return t.m = e, t.c = i, t.p = "", t(0)
+            }([function (e, t) {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {value: !0});
+                var i = window;
+                t["default"] = i.flex = function (e, t) {
+                    var a = e || 100, n = t || 1, r = i.document, o = navigator.userAgent,
+                        d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i), l = o.match(/U3\/((\d+|\.){5,})/i),
+                        c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+                        p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi), s = i.devicePixelRatio || 1;
+                    p || d && d[1] > 534 || c || (s = 1);
+                    var u = 1 / s, m = r.querySelector('meta[name="viewport"]');
+                    m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = a / 2 * s * n + "px"
+                }, e.exports = t["default"]
+            }]);
+            flex(100, 1);
+        }
+
+        document.onreadystatechange = function () {
+            if(document.readyState=="complete") {
+                if(!isMobile){
+                    document.querySelector('body').className = 'pc-device';
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="workbench-app">
+        <div class="title">
+            <a href="javascript:;" :class="{active : type == 0 }" @click="toggleList(0)">7天内到期的任务</a>
+            <a href="javascript:;" :class="{active : type == 1 }" @click="toggleList(1)">已逾期的任务</a>
+        </div>
+        <div class="page" ref="page">
+
+            <!--加载中-->
+            <div class="loading-box" v-if="loading">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <span class="loading-text">加载中...</span>
+            </div>
+            <template v-if="initFinish">
+                <!--无数据-->
+                <div class="no-data" v-show="nodata">
+                  暂无数据
+                    <!--<div class="no-data__img"></div>-->
+                    <!--<div class="no-data__text">暂无数据</div>-->
+                </div>
+
+
+                <!--数据列表-->
+                <div class="mytask">
+                    <!--<transition name="fade">-->
+                    <ul v-if="list.length">
+                        <li v-for="it in list" @click="openTask(it)">
+                            <a href="javascript:;">
+                                <div class="mobile-radius" v-if="it.hasEvent"></div>
+                                <div class="icon-task"></div>
+                                <div class="name">
+                                    <div class="taskname">
+                                        <span>{{it.taskName}}</span>
+                                        <i class="rate" :class="{ 'rate-red' : it.status === 4} ">{{it.rate}}%</i>
+                                    </div>
+                                    <p>
+                                        <label class="user">{{it.creator.userName}}</label>
+                                        <label class="time">结束时间：{{it.endDate}}</label>
+                                    </p>
+                                </div>
+                                <!--<div class="state">-->
+                                <!--&lt;!&ndash;<span class="new" v-if="it.hasEvent && !ismobile">动态</span>&ndash;&gt;-->
+                                <!--<span class="rate" :class="{'rate-red' : it.status == 4 }">{{it.rate}}%</span>-->
+                                <!--</div>-->
+                            </a>
+                        </li>
+                    </ul>
+                    <!--</transition>-->
+                    <div class="pagenation" v-if="!nodata">
+                        <a href="javascript:;" class="up" :class="{disabled: !hasUp}" @click="togglePage('minus')"></a>
+                        <span class="pagenum">{{this.pageNo}}</span>
+                        <a href="javascript:;" class="next" :class="{disabled: !hasNext}"  @click="togglePage('plus')"></a>
+                    </div>
+                </div>
+            </template>
+        </div>
+</div>
+</div>
+
+<script src="assets-workbench/js/workbench.js"></script>
+</body>
+</html>

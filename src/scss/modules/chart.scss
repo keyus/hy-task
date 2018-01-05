@@ -1,0 +1,31 @@
+.charts{
+  background-color: #fff;
+  display: flex;
+  height: 222px;
+
+  .charts-space{
+    width: 10px;
+  }
+  .charts-item {
+    flex:1;
+    border: 1px solid $color-solid;
+    .title{
+      display: flex;
+      justify-content: space-between;
+      color: #999;
+    }
+  }
+
+  .title{
+    padding: 8px;
+  }
+  .chart-box{
+    height: 180px;
+    min-width: 310px;
+  }
+
+
+
+
+}
+

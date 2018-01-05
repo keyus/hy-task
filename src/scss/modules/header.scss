@@ -1,0 +1,60 @@
+.task-header{
+  height: 48px;
+  background: #f6f6f6;
+  display: flex;
+  border-bottom: 1px solid $color-solid;
+  align-items: center;
+  nav {
+    display: flex;
+    padding-left: 10px;
+    flex: 1;
+    a{
+      padding: 5px 7px;
+      border: 1px solid $color-solid;
+      border-left: none;
+      background: #fff;
+      font-size: 13px;
+      &.active,&:hover{
+        background: $color-blue;
+        color: #fff;
+      }
+      &:first-child{
+        border-radius: 5px 0 0 5px;
+        border-left: 1px solid $color-solid;
+      }
+      &:last-child{
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+
+  .search{
+    width: 171px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    background: #fff;
+    input{
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      color: #666;
+      border: none;
+      font-size: 12px;
+      padding: 0 26px 0 8px;
+    }
+    button{
+      border: none;
+      background-image: url("../images/top-bar-search-icon.png");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+}

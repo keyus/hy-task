@@ -1,0 +1,72 @@
+@import "./share/variable";
+//@import "./share/iconfont.css";
+@import "./share/base";
+@import "./modules/header";
+@import "./modules/filter";
+@import "./modules/card";
+@import "./modules/member";
+@import "./modules/chart";
+@import "./modules/count";
+@import "./modules/createTask";
+@import "./modules/createTaskCenter";
+@import "./modules/dialog";
+@import "./modules/selectUser";
+@import "./modules/taskDetail";
+@import "./modules/view";
+
+.mytask{
+  height: 100%;
+  position: relative;
+}
+.section-card{
+  height: calc(100% - 88px);
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+}
+.search-card{
+  height: calc(100% - 48px);
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.empty{
+  width: 300px;
+  height: 250px;
+  background-image: url("../images/noData.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.loading{
+  margin-top: 25px;
+  height: 20px;
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .circular{
+      width: 20px!important;
+      height: 20px!important;
+    }
+    .loading-text{
+      margin-left: 10px;
+    }
+  }
+}
+
+
+.input-error{
+  border: 1px solid $color-red!important;
+}
+
+
+.hy-data-picker-blue{
+  z-index: 10002!important;
+}

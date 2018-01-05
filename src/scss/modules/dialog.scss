@@ -1,0 +1,189 @@
+.dialog{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  .mask{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.dialog-title{
+  height: 28px;
+  line-height: 28px;
+  background: $color-blue1;
+  color: #fff;
+  padding: 0 10px;
+  position: relative;
+  .dialog-title__logo{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: -4px;
+    background: url("../images/logo.png") no-repeat;
+  }
+  a{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    padding: 0 8px;
+    color: #fff;
+  }
+}
+
+//并没有使用tranfrom去直接放到中心点. 以防chrome 的border等，渲染模糊
+.task-center-edit{
+  width: 540px;
+  background: #fff;
+  border: 1px solid #b9b9b9;
+
+  .task-center-edit__body{
+    padding: 10px 10px 0 10px ;
+  }
+
+  .task-center-edit__form-group{
+    display: flex;
+    min-height: 30px;
+    align-items: center;
+    margin-bottom: 3px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    input{
+      font-size: 12px;
+    }
+    .label{
+      width: 80px;
+      text-align-last: justify;
+      color: #777;
+      margin-right: 10px;
+      position: relative;
+      &:after{
+        content: "：";
+        display: inline-block;
+        position: absolute;
+        right: -15px;
+        top: 0;
+      }
+    }
+    .block-right{
+      flex: 1;
+      min-width: 0;
+      padding-left: 10px;
+      input{
+        width: 100%;
+        border: 1px solid #dfdfdf;
+        height: 30px;
+        line-height: 28px;
+        padding: 0 8px;
+      }
+    }
+  }
+  .task-center-edit__form-select{
+    margin-top: 6px;
+    .label{
+      align-self: baseline;
+      padding-top: 5px;
+      &:after{
+        top: 5px;
+      }
+    }
+  }
+  .task-center-edit__form-bang{
+    .label{
+      align-self: baseline;
+      padding-top: 3px;
+      &:after{
+        top: 3px;
+      }
+    }
+    .email-title{
+      height: 24px;
+      line-height: 24px;
+      background: #ebebec;
+      padding: 0 10px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+  }
+  .task-center-edit__form-child{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    .child-label{
+      width: 60px;
+      text-align-last: justify;
+      color: #777;
+      margin-right: 15px;
+      position: relative;
+      &:after{
+        content: "：";
+        display: inline-block;
+        position: absolute;
+        right: -15px;
+        top: 0;
+      }
+    }
+    span{
+      flex: 1;
+      min-width: 0;
+      padding-left: 5px;
+      input{
+        width: 100%;
+        border: 1px solid #dfdfdf;
+        height: 30px;
+        line-height: 28px;
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .task-center-edit__foot{
+    height: 50px;
+    border-top: 1px solid #b9b9b9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    button {
+      margin-left: 10px;
+      display: inline-block;
+      border: 1px solid #a6a6a6;
+      background-color: #f4f4f4;
+      color: #333;
+      cursor: pointer;
+      width: 68px;
+      height: 28px;
+      line-height: 26px;
+      &:hover{
+        background-color: #e6e6e6;
+      }
+    }
+  }
+
+  .select-handle{
+    color: $color-blue;
+    .iconfont{
+      color: #8fc7fe;
+      vertical-align: middle;
+      display: inline-block;
+      margin-top: -4px;
+    }
+    em{
+      color: #999;
+      margin-left: 3px;
+      font-style: normal;
+    }
+  }
+}

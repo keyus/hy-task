@@ -1,0 +1,135 @@
+.view-nav{
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid $color-solid;
+  border-top: 1px solid $color-solid;
+  display: flex;
+  padding: 0 15px;
+  font-size: 14px;
+  .view-nav-wrapper{
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    a{
+      width: 80px;
+      display: inline-block;
+      text-align: center;
+      height: 100%;
+    }
+    .bottom-solid{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      height: 3px;
+      background: #39a9ea;
+      transition: transform 0.2s;
+    }
+
+  }
+  .view-group{
+    font-size: 12px;
+    i {
+      font-size: 20px;
+      color: $color-blue;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -5px;
+      margin-right: 5px;
+    }
+  }
+
+}
+
+.view-body{
+  height: calc(100% - 48px - 90px - 36px);
+  overflow: auto;
+}
+
+
+.event-dynamic-ct {
+  position: relative;
+  .avatar-img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 115px;
+  }
+  .event-time-left {
+    width: 132px;
+    padding-right: 60px;
+    position: absolute;
+    text-align: right;
+    line-height: 20px;
+    .time-hm {
+      font-size: 14px;
+      color: #333;
+    }
+    .time-md {
+      color: #999;
+    }
+  }
+  .time-circle-icon {
+    position: absolute;
+    left: 88px;
+  }
+  .event-detail-right {
+    margin: 0 auto 10px 145px;
+    line-height: 25px;
+    .event-user {
+      color: #666;
+    }
+    .event-description {
+      font-size: 14px;
+      color: #333;
+    }
+    .attachment-name {
+      color: $color-blue;
+      cursor: pointer;
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .attacheMents-ct {
+      min-height: 25px;
+    }
+  }
+}
+.time-line {
+  &:before {
+    background: #d4d4d4 none repeat scroll 0 0;
+    content: "";
+    left: 94px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+  }
+}
+.year-line-start {
+  content: "";
+  height: 40px;
+  width: 1px;
+  .time-y {
+    color: $color-blue;
+    font-size: 16px;
+    width: 132px;
+    padding-right: 60px;
+    position: absolute;
+    text-align: right;
+  }
+  .year-circle-icon {
+    position: absolute;
+    left: 88px;
+  }
+}
+.first-event {
+  >.year-circle-icon {
+    position: absolute;
+    left: 88px;
+    bottom: -3px;
+  }
+}

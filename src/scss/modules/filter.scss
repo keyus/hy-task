@@ -1,0 +1,294 @@
+//过滤器-我的任务-任务中心
+.section-filter{
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+  height: 40px;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #999;
+  .section-filter__bd{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .icon-filter{
+      color: $color-blue;
+      font-size: 13px;
+      align-self: baseline;
+      padding-top: 2px;
+    }
+    .text{
+      margin: 0 5px;
+    }
+    .arrow{
+      position: absolute;
+      font-size: 20px;
+      left: 48px;
+      transition: transform .2s;
+    }
+  }
+  .section-filter__bd.active {
+    .arrow{
+      transform: rotate(90deg);
+    }
+
+  }
+
+
+  .section-filter__center{
+    margin-left: 80px;
+    color: #333;
+    position: relative;
+
+    .current-center{
+      border: 1px solid #ebebeb;
+      background-color: #f6f6f6;
+      padding: 0 8px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    ul{
+      position: absolute;
+      z-index: 2;
+      top: 26px;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ebebeb;
+      box-shadow: 1px 1px 3px -1px #999;
+      font-size: 15px;
+      white-space: nowrap;
+
+      li{
+        padding: 0 25px;
+        height: 36px;
+        line-height: 36px;
+        cursor: pointer;
+        position: relative;
+        i{
+          position: absolute;
+          left: 5px;
+          top: 0;
+          color: $color-green;
+        }
+        &:hover{
+          background-color: #f6f6f6;
+        }
+      }
+    }
+  }
+
+  .section-filter__hd{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a{
+      color: $color-blue;
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      .iconfont{
+        margin-right: 6px;
+      }
+      i{
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+//过滤器-统计分析
+.task-count-filter{
+  height: 48px;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid $color-solid;
+
+  .task-count-filter-bar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #333;
+    .create-date{
+      margin-right: 30px;
+      .create-date__text{
+        font-size: 14px;
+      }
+      .el-input{
+        width: 140px;
+        cursor: pointer;
+        .hy-input__prefix{
+          color: $color-blue;
+          font-size: 16px;
+        }
+        .hy-input__inner{
+          cursor: pointer;
+          border: none;
+          padding-left: 33px;
+          font-size: 14px;
+        }
+      }
+    }
+    .handle{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      button {
+        width: 64px;
+        height: 25px;
+        border: none;
+        text-align: center;
+        background-color: #63b0f6;
+        color: #fff;
+        margin-left: 10px;
+        border-radius: 5px;
+        &.reset{
+          background-color: #fff;
+          color: #63b0f6;
+          border: 1px solid #63b0f6;
+        }
+      }
+
+      .iconfont{
+        color: $color-blue;
+        padding: 0 5px 0 12px;
+        font-size: 19px;
+        opacity: .9;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  .task-count-filter-pop{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    z-index: 3;
+    min-height: 120px;
+    border-bottom: 1px solid $color-solid;
+    box-shadow: 0px 1px 5px -2px #aaa;
+    background-color: #fff;
+
+    h5{
+      border-top: 1px solid $color-solid;
+      margin: 0 10px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 18px;
+      padding: 10px 0;
+    }
+    .hy-checkbox-group{
+      padding: 0 10px;
+      .hy-checkbox {
+        width: 102px;
+      }
+    }
+  }
+}
+
+
+
+//过滤器-窗口
+.task-filter-dialog{
+  background-color: #fff;
+  position: fixed;
+  border: 1px solid #d2d2d2;
+  top: 37px;
+  left: 19px;
+  width: 340px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px -1px #999;
+  padding: 15px;
+  color: #333;
+  z-index: 10001;
+
+  .task-filter-dialog__item{
+    border-bottom: 1px solid $color-solid;
+    padding: 5px 0;
+    h5{
+      color: #666;
+      padding: 5px 0;
+      font-weight: normal;
+    }
+    .hy-checkbox-group{
+      padding-top: 5px;
+      .hy-checkbox {
+        width: 102px;
+      }
+    }
+  }
+
+  .task-filter-dialog__date{
+    border-bottom: none;
+  }
+  .filter-date{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-solid;
+
+    .text{
+      margin-right: 5px;
+    }
+
+    .hy-input__inner{
+      border: none;
+      height: 30px;
+    }
+    .hy-input__prefix{
+      font-size: 17px;
+      color: $color-blue;
+      top: -5px;
+    }
+  }
+
+  .task-filter-dialog__btn{
+    text-align: right;
+    button {
+      margin: 10px 0 0 15px;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #64b0f5;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+.task-filter-dialog__arrow{
+  cursor: pointer;
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-top: -10px;
+  margin-left: -10px;
+  &:after{
+    content: " ";
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #fff;
+    top: -12px;
+    left: 50px;
+  }
+  &:before{
+    content: " ";
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #d2d2d2;
+    top: -13px;
+    left: 50px;
+  }
+}

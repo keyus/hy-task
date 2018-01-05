@@ -1,0 +1,279 @@
+.task-back{
+  height: 48px;
+  border-bottom: 1px solid $color-solid;
+  background-color: #f6f6f6;
+  text-align: right;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+
+  .task-back__search{
+    display: flex;
+    align-items: center;
+    span{
+      width: 170px;
+      height: 30px;
+      background: #fff;
+      border: 1px solid #dedede;
+      margin-right: 10px;
+      border-radius: 3px;
+      position: relative;
+      font-size: 12px;
+      overflow: hidden;
+      i{
+        cursor: pointer;
+        color: #9b9b9b;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 30px;
+        display: inline-block;
+        padding: 0 6px;
+        font-size: 18px;
+      }
+      input{
+        color: #333;
+        padding-left: 8px;
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+      }
+    }
+    label{
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .task-back__right{
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+  }
+
+  a{
+    font-size: 14px;
+    color: #999;
+  }
+  span{
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+}
+
+.create-form{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  .create-form__user{
+    width: 40px;
+    margin-right: 20px;
+    .img{
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+    .name{
+      line-height: 20px;
+      display: block;
+      text-align: center;
+    }
+  }
+  .create-form__input{
+    flex: 1;
+    min-width: 0;
+    .create-form__input-area{
+      position: relative;
+      width: 70%;
+    }
+    textarea{
+      width: 100%;
+      height: 70px;
+      border: 1px solid #ebebeb;
+      padding: 5px;
+    }
+    .close{
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px;
+      color: #cfcfcf;
+    }
+    .limit{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      line-height: 35px;
+      padding: 0 8px;
+      color: #999;
+    }
+  }
+}
+.create-handle{
+  a{
+    color: $color-blue;
+    font-size: 14px;
+    .iconfont {
+      display: inline-block;
+      font-size: 28px;
+      vertical-align: middle;
+      margin: -4px 5px 0 0;
+    }
+  }
+}
+
+.create-list{
+  height: calc(100% - 48px);
+  padding: 10px;
+  overflow: auto;
+
+  .list-card-simple{
+    margin-bottom: 10px;
+    .task-card-simple:last-child{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+.task-card-simple{
+  width: 100%;
+
+  .task-card-simple-main{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &:hover{
+      .task-card-simple__add a{
+        display: inline-block;
+      }
+    }
+  }
+
+
+  .task-card-simple__box{
+    border: 1px solid #c1dbf3;
+    border-radius: 5px;
+    background-color: #eef6ff;
+    height: 70px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+    .name{
+      flex: 1;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      color: #888;
+    }
+    .user{
+      padding: 0 15px;
+      color: $color-blue;
+      width: 80px;
+      text-align: right;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .time{
+      color: #999;
+    }
+
+  }
+  .task-card-simple__add{
+    width: 95px;
+    text-align: center;
+    a{
+      display: none;
+      color: $color-blue;
+      height: 30px;
+      line-height: 30px;
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    .iconfont{
+      margin-right: 5px;
+    }
+  }
+
+  .task-card-simple-children{
+    margin-left: 30px;
+    position: relative;
+    &:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top : -10px;
+      bottom : 35px;
+      width: 1px;
+      border-left: 1px dashed $color-blue;
+      left: -24px;
+    }
+    .task-card-simple-main{
+      &:hover{
+        .task-card-simple__add a{
+          display: none;
+        }
+      }
+    }
+
+    .task-card-simple{
+      position: relative;
+      &:last-child{
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          left: -24px;
+          top: 34px;
+          bottom: 0;
+          width: 2px;
+          background: #fff;
+          z-index: 9;
+        }
+      }
+    }
+
+    .task-card-simple__box{
+      border: 1px solid $color-solid;
+      background-color: #fafafa;
+      position: relative;
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom : 34px;
+        height: 1px;
+        border-bottom: 1px dashed $color-blue;
+        left: -24px;
+        width: 18px;
+      }
+      &:before{
+        position: absolute;
+        content: "";
+        display: block;
+        bottom : 32px;
+        width: 5px;
+        height: 5px;
+        background: $color-blue;
+        border-radius: 50%;
+        font-size: 0;
+        left: -10px;
+      }
+    }
+
+
+  }
+}
+
